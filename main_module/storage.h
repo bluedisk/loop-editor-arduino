@@ -68,7 +68,8 @@ class StorageClass {
       bank_addr_str[1] = 'A'+current_ch;
       
       if ( !editmode ) {
-        bank_addr_str[2] = '\0';
+        bank_addr_str[2] = ' ';
+        bank_addr_str[3] = '\0';
       } else {
         bank_addr_str[2] = '*';
         bank_addr_str[3] = '\0';

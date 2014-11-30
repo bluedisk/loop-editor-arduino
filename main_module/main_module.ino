@@ -33,7 +33,7 @@ ImageView view_loop8 = ImageView(344, 23, 41, 21, img_loop[7], img_loop_bg);
 ImageView view_bank = ImageView( 15,  82, 41, 16, img_bank);
 ImageView view_lock = ImageView( 15, 197, 41, 21, img_lock);
 ImageView view_usb  = ImageView( 63, 197, 41, 21, img_usb);
-ImageView view_amp  = ImageView(206, 203, 60, 10, img_ampctl);
+ImageView view_amp  = ImageView(206, 203, 60, 10, img_ampctl, img_ampctl_dim);
 ImageView view_buff = ImageView(282, 203, 52, 10, img_buffer);
 ImageView view_gate = ImageView(349, 203, 36, 10, img_gate);
 
