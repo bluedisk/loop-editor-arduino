@@ -31,12 +31,7 @@
 #define BTN_IDX_BKUP        2
 #define BTN_IDX_BKDN        3
 
-// button pins (defined in key_define.h)
-const int KEY_PINS[KEY_PIN_COUNT] = {
-  KEY_EDIT, KEY_NAME, KEY_STORE, KEY_UP,
-  KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_DELETE,
-  KEY_ENTER, KEY_EXIT
-};
+// button pins (defined in key_define.h
 
 const int BTN_PINS[BTN_PIN_COUNT] = {
   KEY_TUNER, KEY_AMP, KEY_BKUP, KEY_BKDN,
@@ -45,6 +40,22 @@ const int BTN_PINS[BTN_PIN_COUNT] = {
   KEY_LOOP5, KEY_LOOP6, KEY_LOOP7, KEY_LOOP8
 };
 
+#define KEY_IDX_EDIT       0
+#define KEY_IDX_NAME       1
+#define KEY_IDX_STORE      2
+#define KEY_IDX_UP         3
+#define KEY_IDX_DOWN       4
+#define KEY_IDX_LEFT       5
+#define KEY_IDX_RIGHT      6
+#define KEY_IDX_DELETE     7
+#define KEY_IDX_ENTER      8
+#define KEY_IDX_EXIT       9
+
+const int KEY_PINS[KEY_PIN_COUNT] = {
+  KEY_EDIT, KEY_NAME, KEY_STORE, KEY_UP,
+  KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_DELETE,
+  KEY_ENTER, KEY_EXIT
+};
 
 ///////////////////////
 // HW

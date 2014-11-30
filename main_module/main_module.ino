@@ -98,7 +98,7 @@ void updateViews() {
   view_usb.visible(usb_connected);
 
   // Lock indicator
-  view_lock.visible(Storage.is_locked());
+  view_lock.visible(Storage.isLocked());
 
   view_amp.visible(Storage.getCurrentCtl(CTL_IDX_AMP));
   view_buff.visible(Storage.getCurrentCtl(CTL_IDX_BUFF));
@@ -136,22 +136,22 @@ void fetchGeneralButton() {
 
         // channel button
         const int ch_idx = (idx-BTN_IDX_CHAN_START);
-        setChannel(ch_idx);
+        Storage.setChannel(ch_idx);
 
       } else if (is_in_range(idx, BTN_IDX_LOOP_START, BTN_CNT_LOOP ) ) {
 
         // loop button
         const int loop_idx = (idx-BTN_IDX_LOOP_START);
-        toggleLoop(loop_idx);
+        Storage.toggleLoop(loop_idx);
 
       } else {
         switch (idx) {
           case BTN_IDX_TUNER:
-            toggleControl(CTL_IDX_TUNE);
+            Storage.toggleControl(CTL_IDX_TUNE);
             break;
 
           case BTN_IDX_AMP:
-            toggleControl(CTL_IDX_AMP);
+            Storage.toggleControl(CTL_IDX_AMP);
             break;
 
           case BTN_IDX_BKUP:
@@ -170,6 +170,8 @@ void fetchGeneralButton() {
     // update ui & loop hw
     changeLoopHW();
     updateViews();
+    
+    Storage.dumpCurrent();
 }
 
 // UI 키패드 버튼 눌렸을 때 처리
@@ -179,31 +181,57 @@ void fetchKeypadButton() {
   while ( idx != -1 ) {
     Serial.print("ui keypad ");
     Serial.println(idx);
+    
+    switch(idx) {
+      case KEY_IDX_EDIT:
+        Serial.println("EDIT ON!");
+        Storage.editMode(true);
+        break;
+        
+      case KEY_IDX_STORE:
+        Storage.saveAll();
+        break;
+        
+      case KEY_IDX_EXIT:
+        Storage.editMode(false);
+        break;
+//
 
-    idx = btn_buf.getNext();
-    // do nothing yet.
+      case KEY_IDX_UP:
+        break;
+      
+      case KEY_IDX_DOWN:
+        break;
+      
+      case KEY_IDX_RIGHT:
+        break;
+      
+      case KEY_IDX_LEFT:
+        break;
+        
+//
+      case KEY_IDX_NAME:
+        break;
+        
+      case KEY_IDX_DELETE:
+        break;
+      
+      case KEY_IDX_ENTER:
+        break;
+      
+    }
+    
+    // next
+    idx = key_buf.getNext();
   }
-
-
+  
+  updateViews();
+  Storage.dumpCurrent();
 }
 
 void onTouch(int x, int y) {
-  Serial.print("touched ");
-  Serial.print(x);
-  Serial.print("x");
-  Serial.println(y);
-
   for ( int i=0 ; i < TOTAL_VIEWS ; i++ ) {
     if ( views[i]->isTouched(x, y) ) {
-      Serial.print("view ");
-      Serial.print(i);
-      Serial.print(" touched ");
-      Serial.print(x);
-      Serial.print("x");
-      Serial.print(y);
-      Serial.print(" pin ");
-      Serial.println(view_pins[i]);
-
       const int pin = view_pins[i];
       key_buf.emulateButton(pin);
       btn_buf.emulateButton(pin);
@@ -254,6 +282,7 @@ void loop() {
   key_buf.updateButton();
   btn_buf.updateButton();
 
+  // check next is not required in logic. only for save cpu time.
   if ( key_buf.hasNext() ) fetchKeypadButton();
   if ( btn_buf.hasNext() ) fetchGeneralButton();
 

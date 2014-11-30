@@ -34,31 +34,45 @@ class StorageClass {
   private:
     bank banks[TOTAL_BANK];
 
+    bank edit_bank;
+    bool editmode;
+
     int current_bank;
     int current_ch;
-    bool is_locked;
 
-    // buffer
-    char bank_addr_str[5];
+    // name buffer
+    char bank_addr_str[4];
 
   public:
-  // macro
-    inline bank& getCurrnetBank() { return banks[current_bank]; }
-    inline bool& getCurrnetLoop(const int loop_idx) { return getCurrnetBank.loop[currnet_ch][loop_idx]; }
-    inline bool& getCurrnetCtl(const int ctl_idx)  { return getCurrnetBank.ctl[ctl_idx]; }
+    // 기본정보 가져오기용 유틸 메크로
+    inline bank& getCurrentBank() { 
+      if ( editmode ) 
+        return edit_bank;
+      else 
+        return banks[current_bank]; 
+    }
+    
+    inline bool& getCurrentLoop(const int loop_idx) { return getCurrentBank().loop[current_ch][loop_idx]; }
+    inline bool& getCurrentCtl(const int ctl_idx)  { return getCurrentBank().ctl[ctl_idx]; }
 
     // 현재 설정 변경 용 유틸 함수들
-    inline bool incBank() { if ( current_bank >= (TOTAL_BANK-1) ) return false; current_bank++; return true; }
-    inline bool decBank() { if ( current_bank <= 0 ) return false; current_bank--; return true; }
+    inline bool incBank() { if ( current_bank >= (TOTAL_BANK-1) ) return false; current_bank++; editMode(false); return true; }
+    inline bool decBank() { if ( current_bank <= 0 ) return false; current_bank--; editMode(false); return true; }
 
-    inline void setChannel(const int idx) { current_ch = idx ; }
-    inline void toggleLoop(const int idx) { getCurrentLoop(idx) = !getCurrentLoop(idx); }
-    inline void toggleControl(const int idx) { getCurrentCtl(idx) = !getCurrentCtl(idx); }
+    inline void setChannel(const int idx) { current_ch = idx; }
+    inline void toggleLoop(const int idx) { if ( isLocked() ) return; getCurrentLoop(idx) = !getCurrentLoop(idx); }
+    inline void toggleControl(const int idx) { if ( isLocked() ) return; getCurrentCtl(idx) = !getCurrentCtl(idx); }
 
     inline const char* getCurrentBankName() {
       bank_addr_str[0] = '1'+current_bank;
       bank_addr_str[1] = 'A'+current_ch;
-      bank_addr_str[2] = '\0';
+      
+      if ( !editmode ) {
+        bank_addr_str[2] = '\0';
+      } else {
+        bank_addr_str[2] = '*';
+        bank_addr_str[3] = '\0';
+      }
 
       return bank_addr_str;
     }
@@ -66,14 +80,38 @@ class StorageClass {
     inline const char* getCurrentBankTitle() {
       return getCurrentBank().title;
     }
+    
+    inline bool isEditmode() {
+      return this->editmode;
+    }
+    
+    inline bool isLocked() {
+      return !(this->editmode);
+    }
+    
+    inline void editMode(int mode) {
+      if ( this->editmode == mode ) return;
+      
+      if ( !this->editmode ) {
+        // case of "lock => edit "
+        edit_bank = getCurrentBank();
+      }
+      
+      this->editmode = mode;
+    }
 
+
+    StorageClass();
+    
     // 저장 관련 함수들 프로토 타입선언
     void formatFlash();
-    void save(const int bank);
-    void load(const int bank);
+//    void save(const int bank);
+//    void load(const int bank);
     void saveAll();
     void loadAll();
     void init();
+    
+    void dumpCurrent();
 
 };
 
