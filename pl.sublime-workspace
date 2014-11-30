@@ -1,0 +1,1129 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cur",
+				"current_ch"
+			],
+			[
+				"loop",
+				"loop_idx"
+			],
+			[
+				"CUR",
+				"CUR_LOOPS"
+			],
+			[
+				"fetch",
+				"fetchGeneralButton"
+			],
+			[
+				"Mo",
+				"Model_full	Model (full)"
+			],
+			[
+				"link",
+				"LINK	Tag"
+			],
+			[
+				"Time",
+				"TimestampMeta"
+			],
+			[
+				"biz",
+				"biz_phone"
+			],
+			[
+				"tim",
+				"timestamp"
+			],
+			[
+				"get",
+				"get_timestamp"
+			],
+			[
+				"u",
+				"utfc	coding: utf-8"
+			],
+			[
+				"time",
+				"timestamp_model"
+			],
+			[
+				"Tag",
+				"TagGroup"
+			],
+			[
+				"sto",
+				"storage_model"
+			],
+			[
+				"model",
+				"model_name"
+			],
+			[
+				"ses",
+				"session_field"
+			],
+			[
+				"up",
+				"update_timestamp"
+			],
+			[
+				"by",
+				"by_user"
+			],
+			[
+				"p",
+				"property	New Property"
+			],
+			[
+				"off",
+				"official"
+			],
+			[
+				"group",
+				"group_idx"
+			],
+			[
+				"cal",
+				"calculateMonthly"
+			],
+			[
+				"reg",
+				"regtype"
+			],
+			[
+				"on",
+				"onLoadCompleted"
+			],
+			[
+				"onLo",
+				"onLoadProgressed"
+			],
+			[
+				"vali",
+				"validateAll"
+			],
+			[
+				"group_name",
+				"group_name_index"
+			],
+			[
+				"groupMe",
+				"group_member_db_id_index"
+			],
+			[
+				"group_mem",
+				"group_member_order_index"
+			],
+			[
+				"grou",
+				"group_idx"
+			],
+			[
+				"price_",
+				"price_group_index"
+			],
+			[
+				"mode",
+				"model_name"
+			],
+			[
+				"price",
+				"price_table"
+			],
+			[
+				"gr",
+				"groupName"
+			],
+			[
+				"cl",
+				"clean_group_order"
+			],
+			[
+				"plan",
+				"plan_price"
+			],
+			[
+				"add",
+				"auto_now_add"
+			],
+			[
+				"inter",
+				"internal_apis"
+			],
+			[
+				"create",
+				"created_at"
+			],
+			[
+				"Model",
+				"Model	Model"
+			],
+			[
+				"a",
+				"article"
+			],
+			[
+				"au",
+				"auto_now_add"
+			],
+			[
+				"ar",
+				"article"
+			],
+			[
+				"perm",
+				"perm_type"
+			],
+			[
+				"M",
+				"ModelForm	ModelForm"
+			],
+			[
+				"arti",
+				"article_count"
+			],
+			[
+				"rec",
+				"receiver"
+			],
+			[
+				"re",
+				"receiver"
+			],
+			[
+				"con",
+				"contentForm"
+			],
+			[
+				"dae",
+				"DateTimeField  (class)"
+			],
+			[
+				"from",
+				"from_peer"
+			],
+			[
+				"Who",
+				"WholookSMS"
+			],
+			[
+				"sen",
+				"sender_peer"
+			],
+			[
+				"sms",
+				"sms_msg"
+			],
+			[
+				"Message",
+				"MessageContent  (class)"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"num",
+				"num2code"
+			],
+			[
+				"unpakc",
+				"unpack_uri  (function)"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"auto",
+				"auto_now"
+			],
+			[
+				"Auto",
+				"auto_now_add"
+			],
+			[
+				"Consult",
+				"ConsultStore"
+			],
+			[
+				"ver",
+				"verbose_name"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"getC",
+				"getCustomerOfGuest"
+			],
+			[
+				"cu",
+				"customer	(attribute, instance)"
+			],
+			[
+				"select",
+				"selectObject"
+			],
+			[
+				"ele",
+				"element_origin"
+			],
+			[
+				"temp",
+				"template	(local, instance)"
+			],
+			[
+				"des",
+				"desktopLayer"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"getSta",
+				"getStampPath"
+			],
+			[
+				"T",
+				"TemplateCategory	(imported, instance)"
+			],
+			[
+				"Tem",
+				"TemplateCategory  (class)"
+			],
+			[
+				"v",
+				"verbose_name"
+			],
+			[
+				"ch",
+				"choices"
+			],
+			[
+				"pass",
+				"passphrase"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"nu",
+				"numeric"
+			],
+			[
+				"UpdateTi",
+				"UpdateTimestampSub"
+			],
+			[
+				"rl",
+				"related_name"
+			],
+			[
+				"For",
+				"ForeignKey"
+			],
+			[
+				"start",
+				"startswith"
+			],
+			[
+				"getS",
+				"getSoupDummy(ver, book, chap)	(global, function)"
+			],
+			[
+				"is",
+				"makedirs  (function)"
+			],
+			[
+				"__",
+				"__name__	(builtin, instance)"
+			],
+			[
+				"buffer",
+				"buffer_need"
+			],
+			[
+				"st",
+				"strip	(builtin, function)"
+			],
+			[
+				"dir",
+				"directory"
+			],
+			[
+				"de",
+				"depender"
+			],
+			[
+				"mTeam",
+				"mTeamName"
+			],
+			[
+				"TEAM",
+				"TEAM_B_UNIT_COUNT"
+			],
+			[
+				"mT",
+				"mTeamB"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"v++",
+				"Set Syntax: Objective-C++"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"django",
+				"Set Syntax: Python Django"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"8",
+				"Pep8 Python Lint"
+			],
+			[
+				"goto",
+				"Goto Documentation"
+			],
+			[
+				"instla",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"pavkge",
+				"Package Control: Remove Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"djan",
+				"Set Syntax: HTML (Django)"
+			],
+			[
+				"git check",
+				"Git: Checkout Current File"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"git log",
+				"Git: Log Current File"
+			],
+			[
+				"rp",
+				"Package Control: Remove Package"
+			],
+			[
+				"pi",
+				"Package Control: Install Package"
+			],
+			[
+				"pl",
+				"Package Control: List Packages"
+			],
+			[
+				"gitstatus",
+				"Git: Status"
+			],
+			[
+				"github",
+				"GitHub: History"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pr",
+				"Package Control: Remove Package"
+			],
+			[
+				"pu",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"pb",
+				"Preferences: Browse Packages"
+			],
+			[
+				"package install",
+				"Package Control: Install Package"
+			],
+			[
+				"bind",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"Pac",
+				"Package Control: List Packages"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"exp",
+				"Bluedisk: Extract Expected Reference List"
+			],
+			[
+				"",
+				"Bluedisk: Extract Expected Reference List"
+			],
+			[
+				"ble",
+				"Bluedisk: Extract Reference List"
+			],
+			[
+				"blu",
+				"Bluedisk: Extract Reference List"
+			],
+			[
+				"blue",
+				"Bluedisk: Extract Reference List"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"pacage control",
+				"Package Control: Install Package"
+			],
+			[
+				"p",
+				"Preferences: Browse Packages"
+			],
+			[
+				"bro",
+				"Preferences: Browse Packages"
+			],
+			[
+				"browse",
+				"Preferences: Browse Packages"
+			],
+			[
+				"packge",
+				"Preferences: Browse Packages"
+			],
+			[
+				"set Syntax: c",
+				"Set Syntax: C"
+			],
+			[
+				"Set Syntax: Py",
+				"Set Syntax: Python"
+			],
+			[
+				"Rope: O",
+				"Rope: Organize Imports"
+			],
+			[
+				"Rope",
+				"Rope: Organize Imports"
+			],
+			[
+				"Rop",
+				"Rope: New Project"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			],
+			[
+				"a",
+				"About"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Volumes/NIFTY/main_module/hw_config.h",
+		"/Volumes/NIFTY/main_module/main_module.ino",
+		"/Volumes/NIFTY/main_module/main_config.h",
+		"/Volumes/NIFTY/main_module/hw.cpp",
+		"/Volumes/NIFTY/main_module/storage.h",
+		"/Volumes/NIFTY/main_module/storage.cpp",
+		"/Volumes/NIFTY/main_module/debounce.h",
+		"/Volumes/NIFTY/main_module/img.h",
+		"/Volumes/NIFTY/main_module/key_define.h",
+		"/Volumes/NIFTY/display_module/view.h",
+		"/Volumes/NIFTY/display_module/display_module.ino",
+		"/Volumes/NIFTY/display_module/view.cpp",
+		"/Volumes/NIFTY/display_module/img.h",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/static/js/wholook-api.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/auth/templates/auth/index.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/auth/static/auth/css/auth.css",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/msg/models.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/apis.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/api/utils.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/api/views.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/auth/models.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/auth/templates/auth/signup.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/auth/static/auth/images/wholook_row_logo.png",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/models.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook_timestamp/admin.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook_timestamp/models.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/static/js/Underscore.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/static/core/js/document_edit.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/admin.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/msg/admin.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook_timestamp/__init__.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/models.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook_timestamp/urls.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/api/urls.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook_timestamp/views.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/msg/views.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/contract_pdf_view.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/views.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/admin.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/calculate_model.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/consult2_model.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/consult_model.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/contractDocument_model.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/price-model.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/recommend_model.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/recommend_view.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/ref/priceTable-Object.txt",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/api/models.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/internal_apis.py",
+		"/Users/bluedisk/Dropbox/Workspace/Wholook/wholook-web/wholook_timestamp/urls.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook/urls.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook_timestamp/migrations/__init__.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook/settings.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/templates/biz_phone/module_map.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/templates/core/core_base.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/urls.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/views_officialtable.py",
+		"/Users/bluedisk/Dropbox/Workspace/Wholook/wholook-web/biz_phone/templates/biz_phone/officialtable_view.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook/templates/base_calc.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/templates/biz_phone/loading_spin.gif",
+		"/Users/bluedisk/Dropbox/Workspace/Wholook/wholook-web/wholook/templates/base_calc",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/officialtable-validate.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/templates/biz_phone/officialtable_upload.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/price-view.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/consult_db.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/templates/biz_phone/consult2.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/templates/biz_phone/calculate.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/price-calculator.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/consult_worker.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/consult2_view.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/consult_view.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/officialtable-upload.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/timeline.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/auth/views.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/customer-model.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/templates/admin/table.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/msg/static/msg/js/msg_model.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/calculate_view.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/stock-model.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/consult2_calc.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/utils/management/commands/loadbiz.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/autocomplete_light_registry.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/forms.py",
+		"/Library/Python/2.7/site-packages/autocomplete_light/forms.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/board/templates/board/shortcut_list.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/templates/core/index.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/templates/core/loop_bizsession.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook/templates/base.html",
+		"/Users/bluedisk/Dropbox/Workspace/Wholook/wholook-web/core/templates/core/phonebiz_base.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook/templates/base_inside.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/urls.py",
+		"/Users/bluedisk/Dropbox/Workspace/Wholook/wholook-web/core/templates/core/loop_bizsession.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/utils/PyQRNative.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/utils/views.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/templates/biz_phone/home2.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/templates/biz_phone/home.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/templates/biz_phone/officialtable-validate.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/views_officialprice.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/migrations/0004_auto_20141102_2353.py",
+		"/Users/bluedisk/Workspace/Wholook/temp/biz_phone/models.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/templatetags/tags.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/customer_import.js",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/templates/biz_phone/officialtable_import.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/templates/biz_phone/customer_import.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/templates/biz_phone/priceTable_admin.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/msg/migrations/0001_initial.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook/templates/base_inside_form.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook/templates/base_outside.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/wholook/templates/base_outside_form.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/migrations/0001_initial.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/templates/biz_phone/officialprice_import.html",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/auth/admin.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/auth/forms.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js/officialprice-upload.js",
+		"/Users/bluedisk/Desktop/후룩-kt-141008-공시테이블/시트 1-표 1.csv",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/views_customer.py",
+		"/Users/bluedisk/Workspace/kisp-app/core/views.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/board/views.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/board/urls.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/forms.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/views.py",
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/__init__.py",
+		"/Users/bluedisk/Workspace/Wholook/aa/aa/settings.py",
+		"/Users/bluedisk/Workspace/Wholook/aa/aa/urls.py",
+		"/Users/bluedisk/Workspace/Wholook/aa/bb/models.py",
+		"/Users/bluedisk/Workspace/Wholook/aa/bb/tests.py",
+		"/Users/bluedisk/Workspace/Wholook/aa/bb/views.py",
+		"/Users/bluedisk/Workspace/Wholook/aa/bb/admin.py"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Volumes/NIFTY/main_module",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web/",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web, -*.html, -*.py",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone, -*.html, -*.py",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone, -*.html",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web/, -migration",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/, -migration",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web",
+			"/Users/bluedisk/Workspace/kisp-app/",
+			"/Users/bluedisk/Workspace/KISP/",
+			"/Users/bluedisk/Workspace/kisp/",
+			"/Users/bluedisk/Workspace",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web/msg",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web, -migrations/",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web, -migration/",
+			"/Users/bluedisk/Workspace/Wholook/wholook-web",
+			"<open folders>,-*min.js, -*.dump",
+			"<open folders>,-*min.js",
+			"<open folders>",
+			"/Users/bluedisk/Workspace/kisp-app/django",
+			"/Users/bluedisk/Workspace/kisp-app/django_environ",
+			"",
+			",$",
+			"",
+			"<open files>",
+			"",
+			"\\'",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"IDX_",
+			"_CH",
+			"_CH_",
+			"_CH",
+			"OUTPUT_PINS_CH",
+			"_CH",
+			"_CN",
+			"change",
+			"locked",
+			"CUR_GATE",
+			"CUR_BUFF",
+			"CUR_AMP",
+			"CUR_LOOP",
+			"MAIN_CONFIG_H",
+			"PIN_OU",
+			"PIN_OUT_\\w+",
+			"15",
+			"View.lcd->",
+			"View.lcd->\n",
+			"myGLCD",
+			"KEY_\\w+",
+			"KEY_\\W+",
+			"KEY_[A-Z]+",
+			"KEY_UP      45",
+			"KEY_.+",
+			"42",
+			"get_peer",
+			"getCustomer",
+			"getCUstomer",
+			"get_peer",
+			"Peer",
+			"로",
+			"로그",
+			"field",
+			"orm-group",
+			"form-group",
+			"트위터",
+			"front-car",
+			"front-cart",
+			"col-sm",
+			"_meta",
+			"str(model_name)",
+			".storage_model",
+			"storage_model",
+			"_state",
+			"PhoneModel",
+			"['",
+			"TimestampMeta.",
+			"self.__class__",
+			"__class__",
+			"TimestampMe",
+			"PhoneMeta",
+			"_phone_meta",
+			"_meta",
+			"self",
+			"biz_phone",
+			"'biz_phone'+",
+			"'biz_phone.'",
+			"'biz_phone'",
+			"\"biz_phone\"",
+			"\"biz_phone.\"",
+			"storage_model",
+			"issubclass",
+			"storage_model=",
+			"logger.error(",
+			"get_timestamp",
+			"model_name",
+			"debug",
+			"timetuple",
+			"storage_model",
+			"UpdateTimestamp",
+			"Price",
+			"UpdateTimestamp",
+			"get(",
+			"UpdateTimestamp",
+			"CellType",
+			"UpdateTimestamp",
+			"Update",
+			"_timestamp_meta",
+			"TimestampMeta",
+			"timestamp_",
+			"_meta",
+			"TagTarget",
+			"storage: {",
+			"get_timestamp",
+			"timestamp_url",
+			"user_field",
+			"session_field",
+			"self.storage_model",
+			"timestamp_url",
+			"timestamp",
+			"times",
+			"get_timestamp",
+			"getTimestampFor",
+			"auto_",
+			"tdata",
+			"calc(",
+			"calc",
+			"postMessage",
+			"postMessgae",
+			"getWholesaleCount",
+			"consult2_model.js",
+			"getModuleByCode",
+			"getID",
+			"getCompetibleObject",
+			"calculateMonthly",
+			"getComp",
+			".calc(",
+			".calc",
+			"PriceCalculator",
+			".calc(",
+			"ConsultModule()",
+			"ConsultModule",
+			".calc(",
+			".calc",
+			"queryOfficialPrice",
+			"main_consult",
+			"queryOfficialPrice",
+			"carrier",
+			"price_",
+			"queryPri",
+			"remap",
+			"remapT",
+			" tag",
+			"tag",
+			"// tag",
+			"queryOfficialPrice",
+			"calculateMon"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"_CHAN_",
+			"OUTPUT_PINS_CHANNEL",
+			"후룩",
+			"getModel(",
+			"getModel",
+			"",
+			"/api/peer",
+			"customer_peer",
+			"customer.peer",
+			"customer_peer",
+			"customer.peer",
+			"=u'",
+			"(u'",
+			"wextend",
+			"weach\nwextend",
+			"weach",
+			"",
+			"makeTextBox",
+			"makeCheck",
+			"makeStamp",
+			"addPath",
+			"addRect",
+			"addCheck",
+			"_getStorageKey",
+			"_changeLoadingStatus",
+			"changeLoadingStatus",
+			"__WHOLOOK_BUILTIN_MODEL",
+			"__WHOLOOK_MODEL_DEFAULT_OPTIONS",
+			"option",
+			"main_consult",
+			"_CONSULT_DATA_SCHEMA",
+			"api/",
+			"api.",
+			"filteredObjects",
+			"col-sm-4",
+			"MASTERFILE_PATH",
+			"",
+			"$2($1), \"$5\", $4학위논문, $3.",
+			"$2($1), \"$3\"",
+			"\\t",
+			"",
+			"\\t0$1",
+			"0$1",
+			"0$0",
+			"0$",
+			"0$0",
+			"0$1",
+			"0%1",
+			",",
+			",$",
+			"ENGINE=MyISAM",
+			",",
+			"cur_verse",
+			"\\'",
+			"$1[\"$2\"]",
+			"}",
+			"",
+			"\"condition\": [\"model\",\"regist\"]",
+			"\"condition\": [\"plan\"]",
+			"\"condition\": [\"regist\"]",
+			"[\"model\",\"plan\",\"contract\"]",
+			"feature",
+			"cal",
+			"cj",
+			"lg",
+			"kt",
+			"code",
+			"lg",
+			"kt",
+			"code",
+			"\\}\\,\\n",
+			"},\\n",
+			",\\n",
+			"FEATURE",
+			"\"$1\"",
+			"'",
+			"\"$1\"",
+			"\"$0\"",
+			",",
+			"'$1':",
+			",",
+			"'$1':",
+			"'$1'",
+			":"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 209.0
+	},
+	"output.find_results":
+	{
+		"height": 407.0
+	},
+	"output.jslint_result_view":
+	{
+		"height": 229.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"wa",
+				"static/js/wholook-api.js"
+			],
+			[
+				"wholook-api",
+				"static/js/wholook-api.js"
+			],
+			[
+				"blu",
+				"/Users/bluedisk/Library/Application Support/Sublime Text 2/Packages/User/bluedisk.py"
+			],
+			[
+				"exa",
+				"/Users/bluedisk/Library/Application Support/Sublime Text 2/Packages/User/bluedisk.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/bluedisk/Workspace/Wholook/wholook.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 230.0,
+	"status_bar_visible": true
+}

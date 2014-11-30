@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"path": "key_module"
+		},
+		{
+			"path": "display_module"
+		},
+		{
+			"path": "main_module"
+		},
+		{
+			"path": "store_module"
+		}
+	]
+}
