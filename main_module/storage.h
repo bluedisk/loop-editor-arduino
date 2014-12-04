@@ -45,13 +45,13 @@ class StorageClass {
 
   public:
     // 기본정보 가져오기용 유틸 메크로
-    inline bank& getCurrentBank() { 
-      if ( editmode ) 
+    inline bank& getCurrentBank() {
+      if ( editmode )
         return edit_bank;
-      else 
-        return banks[current_bank]; 
+      else
+        return banks[current_bank];
     }
-    
+
     inline bool& getCurrentLoop(const int loop_idx) { return getCurrentBank().loop[current_ch][loop_idx]; }
     inline bool& getCurrentCtl(const int ctl_idx)  { return getCurrentBank().ctl[ctl_idx]; }
 
@@ -66,7 +66,7 @@ class StorageClass {
     inline const char* getCurrentBankName() {
       bank_addr_str[0] = '1'+current_bank;
       bank_addr_str[1] = 'A'+current_ch;
-      
+
       if ( !editmode ) {
         bank_addr_str[2] = ' ';
         bank_addr_str[3] = '\0';
@@ -81,29 +81,33 @@ class StorageClass {
     inline const char* getCurrentBankTitle() {
       return getCurrentBank().title;
     }
-    
-    inline bool isEditmode() {
+
+    inline const void setCurrentBankTitle(String title) {
+      title.getBytes((unsigned char*)getCurrentBank().title, 32);
+    }
+
+    inline bool isEditMode() {
       return this->editmode;
     }
-    
+
     inline bool isLocked() {
       return !(this->editmode);
     }
-    
+
     inline void editMode(int mode) {
       if ( this->editmode == mode ) return;
-      
+
       if ( !this->editmode ) {
         // case of "lock => edit "
         edit_bank = getCurrentBank();
       }
-      
+
       this->editmode = mode;
     }
 
 
     StorageClass();
-    
+
     // 저장 관련 함수들 프로토 타입선언
     void formatFlash();
 //    void save(const int bank);
@@ -111,7 +115,7 @@ class StorageClass {
     void saveAll();
     void loadAll();
     void init();
-    
+
     void dumpCurrent();
 
 };

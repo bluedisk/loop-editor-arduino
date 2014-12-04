@@ -19,7 +19,7 @@
 // Display Module
 
 UTFT    lcd(TFT01_32WD, LCD_RS, LCD_WD, LCD_CS, LCD_REST);
-UTouch  touch( 6, 5, 4, 3, 2);
+UTouch  touch( T_CLK, T_CS, T_IN, T_OUT, T_IRQ);
 
 ImageView view_loop1 = ImageView( 15, 23, 41, 21, img_loop[0], img_loop_bg);
 ImageView view_loop2 = ImageView( 62, 23, 41, 21, img_loop[1], img_loop_bg);
@@ -38,7 +38,7 @@ ImageView view_buff = ImageView(282, 203, 52, 10, img_buffer);
 ImageView view_gate = ImageView(349, 203, 36, 10, img_gate);
 
 TextView view_chan  = TextView(60,  82,  36, 27, "00", DotMatrix_M);
-TextView view_title = TextView(15, 120, 370, 40, "-----------", segment18_XXL);
+EditView view_title = EditView(15, 120, 370, 40, "-----------", segment18_XXL);
 
 #define TOTAL_VIEWS  16
 
@@ -70,6 +70,9 @@ ButtonBuffer btn_buf(BTN_PINS, BTN_PIN_COUNT);
 // Program Main
 
 bool usb_connected = false;
+
+int nameEditPos = -1;
+String nameEditText;
 
 // 모든 모듈을 초기화 한다
 void initialize() {
@@ -110,7 +113,10 @@ void updateViews() {
   //
   //char bank_title_str[12];
   //strncpy(bank_title_str, Storage.getCurrentBank().title, 11);
-  view_title.setText(Storage.getCurrentBankTitle());
+  if ( nameEditPos == -1 )
+    view_title.setText(Storage.getCurrentBankTitle());
+  else
+    view_title.setText(nameEditText);
 }
 
 // 전체 화면 그리기
@@ -170,8 +176,22 @@ void fetchGeneralButton() {
     // update ui & loop hw
     changeLoopHW();
     updateViews();
-    
+
     Storage.dumpCurrent();
+}
+
+void incNameEditChar() {
+  char ch = nameEditText.charAt(nameEditPos);
+
+  if ( ch < 0x5F )
+    nameEditText.setCharAt(nameEditPos, ch+1);
+}
+
+void decNameEditChar() {
+  char ch = nameEditText.charAt(nameEditPos);
+
+  if ( ch > 0x20 )
+    nameEditText.setCharAt(nameEditPos, ch-1);
 }
 
 // UI 키패드 버튼 눌렸을 때 처리
@@ -181,50 +201,63 @@ void fetchKeypadButton() {
   while ( idx != -1 ) {
     Serial.print("ui keypad ");
     Serial.println(idx);
-    
-    switch(idx) {
-      case KEY_IDX_EDIT:
-        Serial.println("EDIT ON!");
-        Storage.editMode(true);
-        break;
-        
-      case KEY_IDX_STORE:
-        Storage.saveAll();
-        break;
-        
-      case KEY_IDX_EXIT:
-        Storage.editMode(false);
-        break;
-//
 
-      case KEY_IDX_UP:
-        break;
-      
-      case KEY_IDX_DOWN:
-        break;
-      
-      case KEY_IDX_RIGHT:
-        break;
-      
-      case KEY_IDX_LEFT:
-        break;
-        
-//
-      case KEY_IDX_NAME:
-        break;
-        
-      case KEY_IDX_DELETE:
-        break;
-      
-      case KEY_IDX_ENTER:
-        break;
-      
+    if ( nameEditPos != -1 ) {
+      switch(idx) {
+        case KEY_IDX_UP:
+          incNameEditChar();
+          break;
+
+        case KEY_IDX_DOWN:
+          decNameEditChar();
+          break;
+
+        case KEY_IDX_RIGHT:
+          if ( nameEditPos < 16 )
+            nameEditPos++;
+          break;
+
+        case KEY_IDX_LEFT:
+          if ( nameEditPos > 0 )
+            nameEditPos--;
+          break;
+
+        case KEY_IDX_DELETE:
+          nameEditPos = -1;
+          break;
+
+        case KEY_IDX_ENTER:
+          nameEditPos = -1;
+          Storage.setCurrentBankTitle(nameEditText);
+          break;
+
+      }
+    } else {
+      switch(idx) {
+        case KEY_IDX_EDIT:
+          Serial.println("EDIT ON!");
+          Storage.editMode(true);
+          break;
+
+        case KEY_IDX_STORE:
+          Storage.saveAll();
+          break;
+
+        case KEY_IDX_EXIT:
+          Storage.editMode(false);
+          break;
+
+        case KEY_IDX_NAME:
+          if ( Storage.isEditMode() )
+            nameEditPos = 0;
+          break;
+      }
     }
-    
+
     // next
     idx = key_buf.getNext();
   }
-  
+
   updateViews();
   Storage.dumpCurrent();
 }

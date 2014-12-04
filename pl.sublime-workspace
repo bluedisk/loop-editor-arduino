@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"name",
+				"nameEditPos"
+			],
+			[
+				"nameE",
+				"nameEditPos"
+			],
+			[
+				"getC",
+				"getCurrentBankTitle"
+			],
+			[
+				"nameEd",
+				"nameEditText"
+			],
+			[
+				"edit",
+				"editmode"
+			],
+			[
+				"ge",
+				"getCurrentBank"
+			],
+			[
+				"view",
+				"view_title"
+			],
+			[
+				"vi",
+				"view_title"
+			],
+			[
+				"is",
+				"isLocked"
+			],
+			[
+				"EDIT",
+				"EDITVIEW_BLANK_UNTIL"
+			],
+			[
+				"fon",
+				"font_width"
+			],
+			[
+				"bl",
+				"blank_counter"
+			],
+			[
 				"cur",
 				"current_ch"
 			],
@@ -264,10 +312,6 @@
 				"log"
 			],
 			[
-				"getC",
-				"getCustomerOfGuest"
-			],
-			[
 				"cu",
 				"customer	(attribute, instance)"
 			],
@@ -344,10 +388,6 @@
 				"getSoupDummy(ver, book, chap)	(global, function)"
 			],
 			[
-				"is",
-				"makedirs  (function)"
-			],
-			[
 				"__",
 				"__name__	(builtin, instance)"
 			],
@@ -383,6 +423,38 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "main_module/main_module.ino",
+			"settings":
+			{
+				"buffer_size": 7820,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main_module/main_config.h",
+			"settings":
+			{
+				"buffer_size": 2263,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main_module/view.h",
+			"settings":
+			{
+				"buffer_size": 1400,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main_module/view.cpp",
+			"settings":
+			{
+				"buffer_size": 2643,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -612,6 +684,13 @@
 	},
 	"file_history":
 	[
+		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/font.c",
+		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/view.cpp",
+		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/storage.h",
+		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/view.h",
+		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/text.cpp",
+		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/text",
+		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/storage.cpp",
 		"/Volumes/NIFTY/main_module/hw_config.h",
 		"/Volumes/NIFTY/main_module/main_module.ino",
 		"/Volumes/NIFTY/main_module/main_config.h",
@@ -732,14 +811,7 @@
 		"/Users/bluedisk/Workspace/Wholook/wholook-web/board/views.py",
 		"/Users/bluedisk/Workspace/Wholook/wholook-web/board/urls.py",
 		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/forms.py",
-		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/views.py",
-		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/__init__.py",
-		"/Users/bluedisk/Workspace/Wholook/aa/aa/settings.py",
-		"/Users/bluedisk/Workspace/Wholook/aa/aa/urls.py",
-		"/Users/bluedisk/Workspace/Wholook/aa/bb/models.py",
-		"/Users/bluedisk/Workspace/Wholook/aa/bb/tests.py",
-		"/Users/bluedisk/Workspace/Wholook/aa/bb/views.py",
-		"/Users/bluedisk/Workspace/Wholook/aa/bb/admin.py"
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/views.py"
 	],
 	"find":
 	{
@@ -747,7 +819,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Volumes/NIFTY/main_module",
@@ -794,6 +866,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"blank_counter",
+			"char",
+			"Storage::",
 			"IDX_",
 			"_CH",
 			"_CH_",
@@ -918,10 +993,7 @@
 			"remap",
 			"remapT",
 			" tag",
-			"tag",
-			"// tag",
-			"queryOfficialPrice",
-			"calculateMon"
+			"tag"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1023,8 +1095,133 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "main_module/main_module.ino",
+					"settings":
+					{
+						"buffer_size": 7820,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4907,
+								4907
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2417.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "main_module/main_config.h",
+					"settings":
+					{
+						"buffer_size": 2263,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								434,
+								434
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 459.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "main_module/view.h",
+					"settings":
+					{
+						"buffer_size": 1400,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1202,
+								1215
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 410.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "main_module/view.cpp",
+					"settings":
+					{
+						"buffer_size": 2643,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2385,
+								2385
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1278.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1115,7 +1312,7 @@
 		[
 			[
 				"",
-				"/Users/bluedisk/Workspace/Wholook/wholook.sublime-project"
+				"/Users/bluedisk/Workspace/babybjorn/babybjorn.sublime-project"
 			]
 		],
 		"width": 380.0
