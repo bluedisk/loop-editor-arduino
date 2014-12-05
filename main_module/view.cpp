@@ -20,6 +20,8 @@ void View::visible(bool visible) {
 }
 
 void View::update() {
+  postUpdate();
+  
   if ( !invalidate ) return;
   invalidate=false;
 
@@ -113,21 +115,48 @@ void EditView::blinkPos(int pos) {
   this->invalidate=true;
 }
 
+void EditView::blinkNext() {
+  if ( this->editpos == -1 ) return;  
+  
+  if ( this->editpos > EDITVIEW_MAXLENGTH ) return;
+  
+  this->editpos++;
+  this->invalidate=true;
+}
+
+void EditView::blinkPrev() {
+  if ( this->editpos <= 0 ) return;
+
+  this->editpos--;
+  this->invalidate=true;
+}
+
+
+void EditView::setText(String text) {
+  if ( this->text.compareTo(text) == 0 ) return;
+  this->text = text.substring(0, EDITVIEW_MAXLENGTH);
+  invalidate = true;
+}
+
 void EditView::draw() {
   TextView::draw();
 
-  if ( editpos != -1 && blink_counter <= EDITVIEW_BLANK_UNTIL ) {
+  if ( editpos != -1 && blink_counter < EDITVIEW_BLINK_UNTIL ) {
     const int font_width = (int)this->font[0];
-
+    const int font_height = (int)this->font[1];
     const int ex = x + (font_width * editpos);
-    SLCD->fillRect(ex, y, ex+font_width, y+height);
-  }
+    
+    SLCD->setColor(0,0,0);
+    SLCD->fillRect(ex, y, ex+font_width, y+font_height);
+  } 
 }
 
 void EditView::postUpdate() {
+  if ( editpos == -1 ) return;
+  
   blink_counter++;
 
-  if ( blink_counter == EDITVIEW_BLANK_UNTIL ) {
+  if ( blink_counter == EDITVIEW_BLINK_UNTIL ) {
     invalidate = true;
   } else if ( blink_counter > EDITVIEW_SHOW_UNTIL ) {
     blink_counter = 0;

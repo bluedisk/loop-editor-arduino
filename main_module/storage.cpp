@@ -14,7 +14,7 @@ StorageClass::StorageClass() {
   
   for ( int i=0 ; i < TOTAL_BANK ; i++ ) {
     memset(&banks[i],0,sizeof(bank));
-    strcpy(banks[i].title, "No name");
+    strcpy(banks[i].title, "No Name");
   }
   
   editMode(false);

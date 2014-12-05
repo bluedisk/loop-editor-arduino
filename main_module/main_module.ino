@@ -3,6 +3,25 @@
 #include <UTouch.h>
 #include <QueueList.h>
 
+// ADK
+#include "variant.h"
+#include <stdio.h>
+#include <adk.h>
+
+// Accessory descriptor. It's how Arduino identifies itself to Android.
+char applicationName[] = "Arduino_Terminal"; // the app on your phone
+char accessoryName[] = "Arduino Due"; // your Arduino board
+char companyName[] = "Arduino SA";
+
+// Make up anything you want for these
+char versionNumber[] = "1.0";
+char serialNumber[] = "1";
+char url[] = "http://labs.arduino.cc/uploads/ADK/ArduinoTerminal/ThibaultTerminal_ICS_0001.apk";
+
+USBHost Usb;
+ADK adk(&Usb, companyName, applicationName, accessoryName, versionNumber, url, serialNumber);
+
+// Storage
 #include <DueFlashStorage.h>
 #include <efc.h>
 #include <flash_efc.h>
@@ -38,7 +57,7 @@ ImageView view_buff = ImageView(282, 203, 52, 10, img_buffer);
 ImageView view_gate = ImageView(349, 203, 36, 10, img_gate);
 
 TextView view_chan  = TextView(60,  82,  36, 27, "00", DotMatrix_M);
-EditView view_title = EditView(15, 120, 370, 40, "-----------", segment18_XXL);
+EditView view_title = EditView(15, 120, 370, 40, "-----------", Ubuntu);
 
 #define TOTAL_VIEWS  16
 
@@ -70,24 +89,26 @@ ButtonBuffer btn_buf(BTN_PINS, BTN_PIN_COUNT);
 // Program Main
 
 bool usb_connected = false;
-
-int nameEditPos = -1;
 String nameEditText;
 
 // 모든 모듈을 초기화 한다
 void initialize() {
 
+  // init usb
+  cpu_irq_enable();
+  
+  // init view
   View::setLCD(&lcd);
 
   // 플래시 저장공간 초기화 (필요 시 포맷) & 저장된 데이터 읽어오기
   Storage.init();
   initLoopHW();
 
-  lcd.InitLCD(LANDSCAPE_REVERT);
+  lcd.InitLCD(LANDSCAPE);
   lcd.clrScr();
   lcd.setBackColor(0, 0, 0);
 
-  touch.InitTouch(LANDSCAPE_REVERT);
+  touch.InitTouch(LANDSCAPE);
   touch.setPrecision(PREC_MEDIUM);
 }
 
@@ -113,7 +134,7 @@ void updateViews() {
   //
   //char bank_title_str[12];
   //strncpy(bank_title_str, Storage.getCurrentBank().title, 11);
-  if ( nameEditPos == -1 )
+  if ( view_title.blinkPos() == -1 )
     view_title.setText(Storage.getCurrentBankTitle());
   else
     view_title.setText(nameEditText);
@@ -181,17 +202,19 @@ void fetchGeneralButton() {
 }
 
 void incNameEditChar() {
-  char ch = nameEditText.charAt(nameEditPos);
-
-  if ( ch < 0x5F )
-    nameEditText.setCharAt(nameEditPos, ch+1);
+  const int pos = view_title.blinkPos();
+  const char ch = nameEditText.charAt(pos);
+  
+  if ( ch < '~' )
+    nameEditText.setCharAt(pos, ch+1);
 }
 
-void decNameEditChar() {
-  char ch = nameEditText.charAt(nameEditPos);
+void decNameEditChar() {  
+  const int pos = view_title.blinkPos();
+  const char ch = nameEditText.charAt(pos);
 
-  if ( ch > 0x20 )
-    nameEditText.setCharAt(nameEditPos, ch-1);
+  if ( ch > ' ' )
+    nameEditText.setCharAt(pos, ch-1);
 }
 
 // UI 키패드 버튼 눌렸을 때 처리
@@ -202,40 +225,42 @@ void fetchKeypadButton() {
     Serial.print("ui keypad ");
     Serial.println(idx);
 
-    if ( nameEditPos != -1 ) {
+    if ( view_title.blinkPos() != -1 ) {
+      
       switch(idx) {
         case KEY_IDX_UP:
+          Serial.println("KEY_IDX_UP");
           incNameEditChar();
           break;
 
         case KEY_IDX_DOWN:
+          Serial.println("KEY_IDX_DOWN");
           decNameEditChar();
           break;
 
         case KEY_IDX_RIGHT:
-          if ( nameEditPos < 16 )
-            nameEditPos++;
+          Serial.println("next");
+          view_title.blinkNext();
           break;
 
-        case KEY_IDX_LEFT:
-          if ( nameEditPos > 0 )
-            nameEditPos--;
+        case KEY_IDX_LEFT:          
+          Serial.println("prev");
+          view_title.blinkPrev();
           break;
 
         case KEY_IDX_DELETE:
-          nameEditPos = -1;
+          view_title.blinkPos(-1);
           break;
 
         case KEY_IDX_ENTER:
-          nameEditPos = -1;
+          view_title.blinkPos(-1);
           Storage.setCurrentBankTitle(nameEditText);
           break;
-
-      }
+      } // switch
+      
     } else {
       switch(idx) {
         case KEY_IDX_EDIT:
-          Serial.println("EDIT ON!");
           Storage.editMode(true);
           break;
 
@@ -248,8 +273,15 @@ void fetchKeypadButton() {
           break;
 
         case KEY_IDX_NAME:
-          if ( Storage.isEditMode() )
-            nameEditPos = 0;
+          if ( Storage.isEditMode() ) {
+            view_title.blinkPos(0);
+            nameEditText = Storage.getCurrentBankTitle();
+            
+            int padding = EDITVIEW_MAXLENGTH - nameEditText.length();
+            for ( ; padding > 0 ; padding-- ) {
+              nameEditText += ' ';
+            }
+          }
           break;
       }
     }
@@ -278,8 +310,7 @@ void onTouch(int x, int y) {
 void setup() {
 
   Serial.begin(115200);
-  Serial.println(" -- start -- ");
-  Serial.println(A0);
+  Serial.println(" -- boot! -- ");
 
   initialize();
   updateViews();
@@ -296,8 +327,28 @@ int last_touch_y=0;
 int touch_x;
 int touch_y;
 
-void loop() {
+#define ADK_RCVSIZE 128
 
+void loop() {
+  uint8_t adk_buf[ADK_RCVSIZE];
+  uint32_t nbread = 0;
+  
+  Usb.Task();
+
+  if (adk.isReady())
+  {
+    /* Read data from ADK and print to UART */
+    adk.read(&nbread, ADK_RCVSIZE, adk_buf);
+    if (nbread > 0)
+    {
+      Serial.print("RCV: ");
+      for (uint32_t i = 0; i < nbread; ++i)
+        Serial.print((char)adk_buf[i]);
+      
+      Serial.println("");
+    }
+  }
+  
   if (touch.dataAvailable()) {
       touch.read();
       touch_x=touch.getX();

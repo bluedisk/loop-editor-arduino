@@ -59,8 +59,10 @@ class TextView : public View {
     virtual void draw();
 };
 
-#define EDITVIEW_BLANK_UNTIL     50
-#define EDITVIEW_SHOW_UNTIL      100
+#define EDITVIEW_BLINK_UNTIL     3000
+#define EDITVIEW_SHOW_UNTIL      6000
+
+#define EDITVIEW_MAXLENGTH      15
 
 class EditView : public TextView {
   private:
@@ -70,6 +72,12 @@ class EditView : public TextView {
   public:
     EditView(int x, int y, int width, int height,String text, unsigned char *font);
     void blinkPos(int pos);
+
+    inline int blinkPos() { return this->editpos; }
+    void blinkNext();
+    void blinkPrev();
+    
+    void setText(String text);
 
     virtual void draw();
     virtual void postUpdate();

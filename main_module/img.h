@@ -14,5 +14,5 @@ extern unsigned short img_loop_bg[];
 // font
 
 extern unsigned char DotMatrix_M[];
-extern unsigned char segment18_XXL[];
+extern unsigned char Ubuntu[];
 extern unsigned char arial_normal[];
