@@ -9,6 +9,7 @@
 #define TOTAL_LOOP      8
 #define TOTAL_CHANNEL   4
 #define TOTAL_BANK      9
+#define TOTAL_CONTROL   3
 
 ///////////////////////
 // Display Module
@@ -18,7 +19,7 @@
 ///////////////////////
 // Button Module
 
-#define KEY_PIN_COUNT       10  // fix the array size to check repeatly for safety
+#define KEY_PIN_COUNT       11  // fix the array size to check repeatly for safety
 #define BTN_PIN_COUNT       17   // fix array size to check repeatly for safety
 
 #define BTN_IDX_CHAN_START  4               // channel button start index position
@@ -50,11 +51,12 @@ const int BTN_PINS[BTN_PIN_COUNT] = {
 #define KEY_IDX_DELETE     7
 #define KEY_IDX_ENTER      8
 #define KEY_IDX_EXIT       9
+#define KEY_IDX_NOP        10
 
 const int KEY_PINS[KEY_PIN_COUNT] = {
   KEY_EDIT, KEY_NAME, KEY_STORE, KEY_UP,
   KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_DELETE,
-  KEY_ENTER, KEY_EXIT
+  KEY_ENTER, KEY_EXIT, KEY_NOP
 };
 
 ///////////////////////

@@ -12,27 +12,27 @@
 #define CHECK_ADDR      0
 #define START_ADDR      4
 
-#define TOTAL_CONTROL   4
 #define CTL_IDX_AMP     0
 #define CTL_IDX_BUFF    1
 #define CTL_IDX_GATE    2
-#define CTL_IDX_TUNE    3
 
 // 뱅크 데이터 구조
 struct bank {
-  char title[TITLE_MAX_LEN];              // 32
-  bool loop[TOTAL_CHANNEL][TOTAL_LOOP];   // + 32(4*8) = 64
-  bool ctl[TOTAL_CONTROL];                // + 4 = 68
+  char title[TITLE_MAX_LEN];   // 32
+  bool loop[TOTAL_LOOP];       // + 8 = 40
+  bool ctl[TOTAL_CONTROL];     // + 3 = 43
+  bool padding;                // + 1 = 44
 };
 
-#define BANK_BYTESIZE    68               // must be multiplier of 4
-#define TOTAL_BYTESIZE   68*TOTAL_BANK    // must be multiplier of 4
+#define BANK_BYTESIZE    44 // must be multiplier of 4
+#define TOTAL_BYTESIZE   (BANK_BYTESIZE*TOTAL_BANK*TOTAL_CHANNEL)  // must be multiplier of 4
 
+#define BOOL_TO_STRING(x)    ((x)?"1":"0" )
 
 class StorageClass {
 
   private:
-    bank banks[TOTAL_BANK];
+    bank banks[TOTAL_BANK][TOTAL_CHANNEL];
 
     bank edit_bank;
     bool editmode;
@@ -49,21 +49,22 @@ class StorageClass {
       if ( editmode )
         return edit_bank;
       else
-        return banks[current_bank];
+        return banks[current_bank][current_ch];
     }
 
-    inline bool& getCurrentLoop(const int loop_idx) { return getCurrentBank().loop[current_ch][loop_idx]; }
+    inline bool& getCurrentLoop(const int loop_idx) { return getCurrentBank().loop[loop_idx]; }
     inline bool& getCurrentCtl(const int ctl_idx)  { return getCurrentBank().ctl[ctl_idx]; }
 
     // 현재 설정 변경 용 유틸 함수들
-    inline bool incBank() { if ( current_bank >= (TOTAL_BANK-1) ) return false; current_bank++; editMode(false); return true; }
-    inline bool decBank() { if ( current_bank <= 0 ) return false; current_bank--; editMode(false); return true; }
+    inline void incBank() { if ( isLocked() && current_bank < (TOTAL_BANK-1) ) current_bank++; }
+    inline void decBank() { if ( isLocked() && current_bank > 0 ) current_bank--; }
 
-    inline void setChannel(const int idx) { current_ch = idx; }
-    inline void toggleLoop(const int idx) { if ( isLocked() ) return; getCurrentLoop(idx) = !getCurrentLoop(idx); }
-    inline void toggleControl(const int idx) { if ( isLocked() ) return; getCurrentCtl(idx) = !getCurrentCtl(idx); }
+    inline void setChannel(const int idx) { if ( isLocked() ) current_ch = idx; }
+    inline int  getChannel() { return current_ch; }
+    inline void toggleLoop(const int idx) { if ( isEditMode() ) getCurrentLoop(idx) = !getCurrentLoop(idx); }
+    inline void toggleControl(const int idx) { if ( isEditMode() ) getCurrentCtl(idx) = !getCurrentCtl(idx); }
 
-    inline const char* getCurrentBankName() {
+    inline const char* getCurrentName() {
       bank_addr_str[0] = '1'+current_bank;
       bank_addr_str[1] = 'A'+current_ch;
 
@@ -78,11 +79,11 @@ class StorageClass {
       return bank_addr_str;
     }
 
-    inline const char* getCurrentBankTitle() {
+    inline const char* getCurrentTitle() {
       return getCurrentBank().title;
     }
 
-    inline const void setCurrentBankTitle(String title) {
+    inline const void setCurrentTitle(String title) {
       title.getBytes((unsigned char*)getCurrentBank().title, 32);
     }
 
@@ -116,7 +117,7 @@ class StorageClass {
     void loadAll();
     void init();
 
-    void dumpCurrent();
+    String dumpCurrent();
 
 };
 

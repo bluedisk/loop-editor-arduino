@@ -43,6 +43,7 @@
 #define KEY_DELETE  49
 #define KEY_ENTER   50
 #define KEY_EXIT    51
+#define KEY_NOP     99  // virtual key
 
 #define KEY_TUNER     4
 #define KEY_CHAN_D    A2

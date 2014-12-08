@@ -9,12 +9,16 @@ StorageClass Storage;
 // StorageClass implements
 
 StorageClass::StorageClass() {
+//  Serial.println("Storage constructer");
+
   this->current_bank = 0;
   this->current_ch = 0;
   
   for ( int i=0 ; i < TOTAL_BANK ; i++ ) {
-    memset(&banks[i],0,sizeof(bank));
-    strcpy(banks[i].title, "No Name");
+    for ( int ch=0 ; ch < TOTAL_CHANNEL ; ch++ ) {
+      memset(&(banks[i][ch]),0,sizeof(bank));
+      strcpy(banks[i][ch].title, "No Name");
+    }
   }
   
   editMode(false);
@@ -83,19 +87,22 @@ void StorageClass::init() {
 
 }
 
-void StorageClass::dumpCurrent() {
-  bank &b = getCurrentBank();
+String StorageClass::dumpCurrent() {
+  String dump;
   
-  Serial.print(getCurrentBankName());
-  Serial.print(":");
-  Serial.print(getCurrentBankTitle());
-  for ( int ch=0 ; ch < TOTAL_CHANNEL ; ch++ ) {
-    Serial.print(":");
-    for ( int lp=0 ; lp < TOTAL_LOOP ; lp++ ) {
-      Serial.print(b.loop[ch][lp]);  
-    }
-  }  
-  Serial.print(":");
-  Serial.println(b.ctl[CTL_IDX_AMP]);
+  dump += getCurrentName();
+  dump += ":";
+  dump += getCurrentTitle();
   
+  bank& current_bank = getCurrentBank();
+  
+  dump += ":";
+  for ( int lp=0 ; lp < TOTAL_LOOP ; lp++ ) 
+    dump += BOOL_TO_STRING(current_bank.loop[lp]);
+  
+  dump += ":"; 
+  for ( int ctl=0 ; ctl < TOTAL_CONTROL ; ctl++ ) 
+    dump += BOOL_TO_STRING(current_bank.ctl[ctl]);
+  
+  return dump;
 }

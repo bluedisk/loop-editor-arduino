@@ -1,7 +1,9 @@
 #include "debounce.h"
 
 DebounceButton::DebounceButton(const int pin) {
-  pinMode(pin,INPUT_PULLUP);
+  if ( pin != 99 ) 
+    pinMode(pin,INPUT_PULLUP);
+    
   this->pin = pin;
 }
 
@@ -14,6 +16,8 @@ int DebounceButton::getState() {
 }
 
 bool DebounceButton::checkState() {
+  if ( pin == 99 ) return false;
+  
   bool updated=false;
   
   if(millis() != time)
@@ -53,7 +57,7 @@ ButtonBuffer::ButtonBuffer(const int pins[], int count) {
     
     int i;
     for ( i=0 ; i < count ; i++ ) {
-      buttons[i] = new DebounceButton(pins[i]);
+        buttons[i] = new DebounceButton(pins[i]);
     }
 }
 

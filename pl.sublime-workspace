@@ -424,34 +424,26 @@
 	"buffers":
 	[
 		{
-			"file": "main_module/main_module.ino",
-			"settings":
-			{
-				"buffer_size": 7820,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "main_module/main_config.h",
 			"settings":
 			{
-				"buffer_size": 2263,
+				"buffer_size": 2328,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "main_module/view.h",
+			"file": "main_module/hw_config.h",
 			"settings":
 			{
-				"buffer_size": 1400,
+				"buffer_size": 1463,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "main_module/view.cpp",
+			"file": "main_module/storage.h",
 			"settings":
 			{
-				"buffer_size": 2643,
+				"buffer_size": 3023,
 				"line_ending": "Unix"
 			}
 		}
@@ -684,10 +676,13 @@
 	},
 	"file_history":
 	[
-		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/font.c",
+		"/Users/bluedisk/Dropbox/EGGPANG/Programmable Loop/Design/400x240_logo.c",
 		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/view.cpp",
-		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/storage.h",
 		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/view.h",
+		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/main_config.h",
+		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/main_module.ino",
+		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/font.c",
+		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/storage.h",
 		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/text.cpp",
 		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/text",
 		"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module/storage.cpp",
@@ -808,10 +803,7 @@
 		"/Users/bluedisk/Desktop/후룩-kt-141008-공시테이블/시트 1-표 1.csv",
 		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/views_customer.py",
 		"/Users/bluedisk/Workspace/kisp-app/core/views.py",
-		"/Users/bluedisk/Workspace/Wholook/wholook-web/board/views.py",
-		"/Users/bluedisk/Workspace/Wholook/wholook-web/board/urls.py",
-		"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/forms.py",
-		"/Users/bluedisk/Workspace/Wholook/wholook-web/core/views.py"
+		"/Users/bluedisk/Workspace/Wholook/wholook-web/board/views.py"
 	],
 	"find":
 	{
@@ -819,9 +811,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"/Users/bluedisk/Dropbox/Workspace/LoopEditor/loop-editor-arduino/main_module",
 			"/Volumes/NIFTY/main_module",
 			"/Users/bluedisk/Workspace/Wholook/wholook-web/",
 			"/Users/bluedisk/Workspace/Wholook/wholook-web/biz_phone/static/biz_phone/js",
@@ -866,6 +859,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"getBytes",
+			"incBank",
+			"KEY_PINS",
+			"TOTAL_CONTROL",
 			"blank_counter",
 			"char",
 			"Storage::",
@@ -989,11 +986,7 @@
 			"queryOfficialPrice",
 			"carrier",
 			"price_",
-			"queryPri",
-			"remap",
-			"remapT",
-			" tag",
-			"tag"
+			"queryPri"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1095,23 +1088,23 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "main_module/main_module.ino",
+					"file": "main_module/main_config.h",
 					"settings":
 					{
-						"buffer_size": 7820,
+						"buffer_size": 2328,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4907,
-								4907
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1124,25 +1117,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2417.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "main_module/main_config.h",
+					"file": "main_module/hw_config.h",
 					"settings":
 					{
-						"buffer_size": 2263,
+						"buffer_size": 1463,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								434,
-								434
+								1164,
+								1166
 							]
 						],
 						"settings":
@@ -1150,61 +1143,28 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C++/C++.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 459.0,
+						"translation.y": 270.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "main_module/view.h",
+					"file": "main_module/storage.h",
 					"settings":
 					{
-						"buffer_size": 1400,
+						"buffer_size": 3023,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1202,
-								1215
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 410.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "main_module/view.cpp",
-					"settings":
-					{
-						"buffer_size": 2643,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2385,
-								2385
+								2319,
+								2327
 							]
 						],
 						"settings":
@@ -1217,7 +1177,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1278.0,
+						"translation.y": 887.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

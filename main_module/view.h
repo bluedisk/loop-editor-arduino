@@ -6,7 +6,7 @@ class View {
     int height;
 
     bool is_visible;
-    bool invalidate;
+    bool invalidated;
 
     static UTFT *lcd;
 
@@ -25,6 +25,7 @@ class View {
     void visible(bool visible);
 
     void update();
+    void invalidate();
 
     // touch control
     bool isTouched(int x, int y);

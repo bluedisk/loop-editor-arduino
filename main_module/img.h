@@ -16,3 +16,7 @@ extern unsigned short img_loop_bg[];
 extern unsigned char DotMatrix_M[];
 extern unsigned char Ubuntu[];
 extern unsigned char arial_normal[];
+
+// logo
+
+extern unsigned short logo_only[];

@@ -9,21 +9,25 @@ View::View(int x, int y, int width, int height) {
   this->width = width;
   this->height = height;
 
-  invalidate = true;
+  invalidated = true;
   is_visible = true;
 }
 
 void View::visible(bool visible) {
   if ( this->is_visible == visible ) return;
   this->is_visible=visible;
-  invalidate=true;
+  invalidate();
+}
+
+void View::invalidate() {
+  invalidated=true;
 }
 
 void View::update() {
   postUpdate();
   
-  if ( !invalidate ) return;
-  invalidate=false;
+  if ( !invalidated ) return;
+  invalidated=false;
 
   if ( is_visible )
     draw();
@@ -85,7 +89,7 @@ TextView::TextView(int x, int y, int width, int height, String text, unsigned ch
 void TextView::setText(String text) {
   if ( this->text.compareTo(text) == 0 ) return;
   this->text = text;
-  invalidate = true;
+  invalidate();
 }
 
 String& TextView::getText() {
@@ -112,7 +116,7 @@ EditView::EditView(int x, int y, int width, int height,String text, unsigned cha
 void EditView::blinkPos(int pos) {
   this->editpos = pos;
   this->blink_counter = 0;
-  this->invalidate=true;
+  invalidate();
 }
 
 void EditView::blinkNext() {
@@ -121,21 +125,21 @@ void EditView::blinkNext() {
   if ( this->editpos > EDITVIEW_MAXLENGTH ) return;
   
   this->editpos++;
-  this->invalidate=true;
+  invalidate();
 }
 
 void EditView::blinkPrev() {
   if ( this->editpos <= 0 ) return;
 
   this->editpos--;
-  this->invalidate=true;
+  invalidate();
 }
 
 
 void EditView::setText(String text) {
   if ( this->text.compareTo(text) == 0 ) return;
   this->text = text.substring(0, EDITVIEW_MAXLENGTH);
-  invalidate = true;
+  invalidate();
 }
 
 void EditView::draw() {
@@ -157,10 +161,10 @@ void EditView::postUpdate() {
   blink_counter++;
 
   if ( blink_counter == EDITVIEW_BLINK_UNTIL ) {
-    invalidate = true;
+    invalidate();
   } else if ( blink_counter > EDITVIEW_SHOW_UNTIL ) {
     blink_counter = 0;
-    invalidate = true;
+    invalidate();
   }
 }
 
